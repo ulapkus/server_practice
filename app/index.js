@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, FlatList, Button, TextInput } from "react-native";
+import { View, Text, FlatList, TextInput } from "react-native";
 
 const API_URL = "http://localhost:3001";
 
@@ -95,6 +95,9 @@ export default function Home() {
         marginTop: 20,
         flexDirection: "column",
         gap: 10,
+        height: "100%",
+        paddingRight: "5%",
+        paddingLeft: "5%",
       }}
     >
       <View
@@ -106,13 +109,13 @@ export default function Home() {
         }}
       >
         <TextInput
-          style={{ fontSize: 20 }}
+          style={{ fontSize: 20, textAlign: "center" }}
           placeholder="Name"
           value={name}
           onChangeText={setName}
         />
         <TextInput
-          style={{ fontSize: 20 }}
+          style={{ fontSize: 20, textAlign: "center" }}
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
@@ -123,6 +126,7 @@ export default function Home() {
             borderColor: "grey",
             borderRadius: 13,
             padding: 5,
+            marginTop: "5%",
           }}
           onPress={handleSubmit}
         >
@@ -132,7 +136,7 @@ export default function Home() {
       <View
         style={{
           width: "100%",
-          height: "13%",
+          height: "5%",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
@@ -147,6 +151,7 @@ export default function Home() {
               padding: 3,
               width: "20%",
               textAlign: "center",
+              margin: 0
             }}
             onPress={() => {
               setEditingUser(null);
@@ -168,9 +173,11 @@ export default function Home() {
               justifyContent: "space-between",
               alignItems: "center",
               gap: 0,
+              height: "100%",
+              paddingTop: "5%",
             }}
           >
-            <Text style={{ fontSize: 20 }}>
+            <Text style={{ fontSize: 20, textAlign: "center" }}>
               {item.name} ({item.email})
             </Text>
             <View
